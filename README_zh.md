@@ -104,6 +104,23 @@ python run.py
 }
 ```
 
+
+## 分层 Skills（Group -> Product -> API）
+
+项目新增了 skill：`skills/huawei-mcp-layered`，支持按分层路径定位 MCP 能力：
+
+1. 先定位 Group Name
+2. 再定位 Product Name
+3. 最后调用 `mcp_collect.py` 获取该产品对应 MCP API schema
+
+示例命令：
+
+```bash
+python skills/huawei-mcp-layered/scripts/hierarchy_query.py --list-groups
+python skills/huawei-mcp-layered/scripts/hierarchy_query.py --group "管理与监管"
+python skills/huawei-mcp-layered/scripts/hierarchy_query.py --group "管理与监管" --product "云监控服务" --collect-api --output ces_schema.json
+```
+
 ## 功能点(Tools)
 
 <!DOCTYPE html>
